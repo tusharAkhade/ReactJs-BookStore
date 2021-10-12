@@ -1,0 +1,14 @@
+.footerContainer {
+    background-color: #2E1D1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 8vh;
+}
+
+.footerContent {
+    width: 70%;
+    color: #FFFFFF;
+    font: normal normal medium 13px/15px 'Lato';
+}
