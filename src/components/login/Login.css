@@ -1,0 +1,143 @@
+.loginPageContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainLoginPage {
+    box-sizing: border-box;
+    width: 727px;
+    height: 425px;
+    /* border: 5px solid red; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    opacity: 1;
+}
+
+.mainLoginPageImagediv {
+    width: 624px;
+    height: 391px;
+    /* border: 5px solid red; */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.mainLoginAndSignUpPageDetails {
+    width: 389px;
+    height: 425px;
+    /* border: 3px solid blue; */
+    border: 1px solid #E4E4E4;
+    align-self: flex-end;
+    position: relative;
+    border-radius: 5px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    left: 338px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 68px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.mainLoginPageImagedivItem {
+    display: flex;
+    /* border: 10px solid red; */
+    height: 100%;
+    opacity: 1;
+    width: 245px;
+    height: 391px;
+    margin-left: 53px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.mainLoginPageDivBgImg {
+    /* border: 10px solid blue; */
+    width: 245px;
+    height: 245px;
+    background-image: url(../../assets/main_page.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.mainLoginPageDivText {
+    font: 18px/24px 'Roboto';
+    text-align: center;
+    font-weight: bolder;
+    /* height: 20%; */
+}
+
+.loginAndSignupForm {
+    display: flex;
+    width: 100%;
+    height: 33px;
+    justify-content: space-between;
+    /* border: 1px solid; */
+}
+
+.pageHeadingText {
+    font: 25px/33px 'Roboto';
+    width: 90px;
+    text-align: left;
+    /* font: normal normal medium 25px/33px Roboto; */
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.LoginForm, .SignupForm {
+    color: #878787;
+}
+
+.LoginFormClick, .SignupFormClick {
+    color: #0A0102;
+}
+
+.loginPageForm, .SignUpPageForm {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 85%;
+}
+
+.username-container {
+    width: 100%;
+    min-height: 20%;
+}
+
+.login-password-container {
+    width: 100%;
+    min-height: 20%;
+}
+
+.loginBtnContainer {
+    width: 100%;
+    min-height: 20%;
+}
+
+.loginOptions {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fbLoginBtn, .googleLoginBtn {
+    width: 45%;
+    height: 20%;
+}
+
