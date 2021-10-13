@@ -1,0 +1,123 @@
+.customerAddressOuterContainer {
+    margin: 10px;
+    padding: 20px;
+    width: 80%;
+    border: 1px solid #DCDCDC;
+    min-height: 50vh;
+}
+
+.customerAddressItem1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Roboto';
+}
+
+.customerAddressItem1Text {
+    font: 18px/24px 'Roboto';
+    color: #333232;
+    font-weight: bold;
+}
+
+.customerAddressItem1Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #A03037;
+    border-radius: 2px;
+    width: 150px;
+    height: 35px;
+    margin-bottom: 24px;
+    font: normal normal normal 13px/16px Roboto;
+    color: #A03037;
+}
+
+.customerDetailsContainer {
+    width: 75%;
+}
+
+.customerBasicDetail {
+    /* border: 2px solid green; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding-left: 15px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.customerFullname, .customerMobileNum, .customerCity, .customerState {
+    width: 48%;
+}
+
+.customerEditAddressDetailContainer {
+    width: 100%;
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.customerDetailsWorkText, .customerAddedDetailHeadText {
+    font-family: 'Roboto';
+    font-weight: bold;
+    width: 90px;
+    height: 20px;
+}
+
+.customerDetailsWorkText span {
+    color: #A03037;
+    font-size: 0.7em;
+    padding-left: 2%;
+}
+
+.customerAddressText {
+    padding-left: 15px;
+    font: 13px/15px 'Lato';
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #0A0102;
+}
+
+.customerContinueBtnDiv {
+    display: flex;
+    min-width: 100px;
+    width: 100%;
+    min-height: 30px;
+    height: 10%;
+    /* border: 1px solid blue; */
+    justify-content: flex-end;
+    margin-bottom: 7%;
+}
+
+.customerContinueBtn {
+    width: 20%;
+    min-width: 100px;
+    max-width: 200px;
+    height: 100%;
+    background-color: #3371B5;
+    border: none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-family:"Lato";
+    cursor: pointer;
+}
+
+.customerAddressTextarea {
+    box-sizing: border-box;
+    padding-left: 15px;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.radioButtonContainer {
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.radioButton {
+    width: 400px;
+}
+
+
