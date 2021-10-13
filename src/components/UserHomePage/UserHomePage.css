@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbarInUserHome {
+    width: 100vw;
+    height: 8vh;
+}
+
+.booksCardInUserHome {
+    width: 100vw;
+}
+
