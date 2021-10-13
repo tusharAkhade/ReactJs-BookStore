@@ -1,0 +1,165 @@
+.allBooksCardMainContainer {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.allBooksCardContainer {
+    width: 70%;
+    min-height: 100vh;
+}
+
+.viewAllBookHead {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headText {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.headTextSpan {
+    font-weight: 400;
+    font-size: 0.5em;
+}
+
+.allBooksCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.singleBookCard {
+    cursor: pointer;
+    width: 23%;
+    min-height: 275px;
+    border: 2px solid #E2E2E2;
+    border-radius: 3px;
+    margin: 20px 0;
+}
+
+.bookImgContainer {
+    width: 100%;
+    height: 172px;
+    /* border: 2px solid green; */
+    display: flex;
+    align-items: center;
+    background: #F5F5F5;
+}
+
+.bookImage {
+    /* border: 2px solid blue; */
+    width: 100%;
+    height: 80%;
+    background: url(../../assets/bookImage1.png) center no-repeat;
+    background-clip: padding-box;
+    background-size: contain;
+}
+
+.bookMetadataContainer {
+    /* border: 2px solid blue; */
+    min-height: 103px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 25px;
+}
+
+.bookName {
+    /* border: 1px solid black; */
+    font: normal normal normal 18px/19px 'Roboto';
+    color: #0A0102;
+}
+
+.bookAuthorName {
+    font: normal normal normal 13px/13px 'Roboto';
+    color: #878787;
+}
+
+.bookRatings {
+    display: flex;
+}
+
+.bookRatingPoints {
+    background: #388E3C;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font: normal normal bold 13px/13px 'Roboto';
+    width: 43px;
+    color: #FFFFFF;
+    height: 20px;
+}
+
+.numOfPeopleRatingInViewAll {
+    color:#878787;
+    display: flex;
+    align-self: center;
+    padding: 0 5px;
+    font: normal normal normal 13px/13px 'Roboto';
+}
+
+.bookPriceContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.numOfPeopleRatingInViewAll {
+    display: flex;
+    flex-direction: row;
+}
+
+.newPriceInViewAll {
+    font: normal normal bold 14px/16px 'Roboto';
+    color: #0A0102;
+}
+
+.oldPriceInViewAll{
+    font: normal normal normal 12px/13px 'Roboto';
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: #878787;
+    text-decoration: line-through;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1000px) {
+    .singleBookCard {
+        width: 31%;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 760px) {
+    .singleBookCard {
+        width: 235px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .allBooksCard {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .viewAllBookHead {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
