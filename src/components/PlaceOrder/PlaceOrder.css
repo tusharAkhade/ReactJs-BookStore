@@ -1,0 +1,89 @@
+.placeOrderOuterContainer {
+    /* border: 2px solid red; */
+    width: 100vw;
+    height: 84vh;
+    display: flex;
+    justify-content: center;
+}
+
+.placeOrderContainer {
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: #333232;
+}
+
+.placeOrderHeading {
+    font: normal normal bold 25px/30px 'Lato';
+    text-align: center;
+}
+
+.placeOrderContentConatainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.placeOrderContent {
+    width: 354px;
+    font: normal normal normal 18px/22px 'Lato';
+}
+
+.placeOrderDetailsContainer {
+    box-sizing: border-box;
+    min-height: 112px;
+    height: auto;
+    border: 1px solid #DCDCDC;
+    display: flex;
+    flex-direction: column;
+}
+
+.placeOrderDetailsHead {
+    background-color: #FAFAFA;
+    min-height: 42px;
+    height: auto;
+    border-radius: 1px solid #DCDCDC;
+    display: flex;
+    flex-direction: row;
+}
+
+.placeOrderDetailsHeadText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 13px/15px 'Lato';
+    width: 33.33%;
+}
+
+
+.placeOrderDetailsInfo {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.placeOrderDetailsInfoText {
+    padding: 10px;
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 13px/15px 'Lato';
+    border: 1px solid #DCDCDC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
