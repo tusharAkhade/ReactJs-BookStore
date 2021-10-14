@@ -5,10 +5,13 @@ import Footer from '../Footer/Footer'
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { getWishListBooks, removeWishListBook } from '../../service/DataService';
+import { addToCart, getAddedToCartBooks, getWishListBooks, removeWishListBook } from '../../service/DataService';
+import { useHistory } from 'react-router';
 
 function Wishlist() {
+    const history = useHistory()
     const [wishListBooks, setWishListBooks] = useState([])
+    const [addedToBagBooks, setAddedToBagBooks] = useState([])
     const [bookQuantity, setBookQuantity] = useState(0)
 
     const wishlistBook = () => {
@@ -28,8 +31,26 @@ function Wishlist() {
             .catch(err => console.log(err))
     }
 
+    const cartBooks = () => {
+        getAddedToCartBooks()
+            .then(res => {
+                setAddedToBagBooks(res.data.result)
+                console.log(res.data.result);
+            })
+    }
+
+    const handleAddToBagClick = (productId) => {
+        console.log("handle add to bag");
+        addToCart(productId)
+        .then(res => {
+            handleDeleteWishlistClick(productId)
+            history.push('/user-cart')
+        })
+    }
+
     useEffect(() => {
         wishlistBook()
+        cartBooks()
     }, [])
     return (
         <div>
@@ -55,18 +76,9 @@ function Wishlist() {
                                         </div>
                                     </div>
                                     <div className="wishlistButtonsContainer">
-                                        {
-                                            bookQuantity >= 0 ?
-                                                <div className="wishlistCounterButtons">
-                                                    <div className="wishlistSubtractQuantityBtn"> <RemoveOutlinedIcon style={{ width: "100%", height: "100%", color: "#DBDBDB", }} /> </div>
-                                                    <div className="wishlistQuantityDisplay"> 5 </div>
-                                                    <div className="wishlistAddQuantityBtn"> <AddOutlinedIcon style={{ width: "100%", height: "100%", color: "#333232", }} /> </div>
-                                                </div>
-                                                :
-                                                <div className="wishlistAddToBagBtnContainer">
-                                                <div className="wishlistAddToBagBtn">Add to bag</div>
-                                                </div>
-                                        }
+                                        <div className="wishlistAddToBagBtnContainer">
+                                            <div className="wishlistAddToBagBtn" onClick={() => handleAddToBagClick(book.product_id._id)}>Add to bag</div>
+                                        </div>
                                         <div className="removeFromWishlistBtn" onClick={() => handleDeleteWishlistClick(book.product_id._id)} > <DeleteOutlineOutlinedIcon style={{ width: "100%", height: "100%", }} /> </div>
                                     </div>
                                 </div>
