@@ -171,22 +171,18 @@
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 760px) {
+@media screen and (min-width: 660px) and (max-width: 760px) {
     .navItem1 {
         width: 80%;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 660px) {
     .navItem1 {
         width: 60%;
     }
 
     .navSearchbar {
         display: none;
-    }
-
-    .navbarMainContainer {
-        height: 50px;
     }
 }
