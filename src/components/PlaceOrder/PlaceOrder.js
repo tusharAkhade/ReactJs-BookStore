@@ -9,7 +9,11 @@ function PlaceOrder() {
             <Navbar />
             <div className="placeOrderOuterContainer">
                 <div className="placeOrderContainer">
-                    <p className="placeOrderHeading">Order Placed Successfully</p>
+                    <div className="orderImgAndHeading">
+                        <div className="order1Img"></div>
+                        <p className="placeOrderHeading">Order Placed Successfully</p>
+                        <div className="order2Img"></div>
+                    </div>
                     <div className="placeOrderContentConatainer">
                         <div className="placeOrderContent">hurray!!! your order is confirmed <br /> the order id is #123456 save the order id for further communication..</div>
                     </div>
