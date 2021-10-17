@@ -279,6 +279,32 @@
 }
 
 
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .bookImageShowContainer {
+        width: 40%;
+    }
 
+    .bookInfoShowContainer {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .singleBookInfoContainer {
+        flex-direction: column;
+    }
+
+    .bookImageShowContainer {
+        width: 100%;
+    }
+
+    .bookInfoShowContainer {
+        width: 100%;
+    }
+
+    .singleBookImageContainer {
+        height: 400px;
+    }
+}
 
 

@@ -26,7 +26,7 @@ function UserHomePage() {
 
     return (
         <div>
-            <div className="navbarInUserHome" style={{position:"sticky", top:"0"}}>
+            <div className="navbarInUserHome" style={{position:"sticky", zIndex:"2", top:"0"}}>
                 <Navbar name="homePage" listenToViewBookInfo={listenToViewBookInfo} />
             </div>
             <div className="booksCardInUserHome">
