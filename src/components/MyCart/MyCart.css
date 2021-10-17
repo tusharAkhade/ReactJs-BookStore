@@ -39,10 +39,11 @@
 
 .myCartItem1 {
     width: 100%;
-    height: 40px;
+    min-height: 40px;
     /* border: 2px solid black; */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -83,7 +84,7 @@
     display: flex;
     flex-direction: row;
     /* border: 1px solid red; */
-    height: 89px;
+    min-height: 89px;
     justify-content: space-between;
     width: 236px;
 }
@@ -209,7 +210,20 @@
     margin-top: 10px;
 }
 
+@media screen and (max-width: 600px) {
+    .myCartItem1Location {
+        width: 175px;
+    }
 
+    .myCartItem2-2BookQuantity {
+        position: static;
+    }
+
+    .myCartItem2-1 {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 
 
 

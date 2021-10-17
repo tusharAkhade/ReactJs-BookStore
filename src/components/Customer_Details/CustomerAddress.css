@@ -3,7 +3,7 @@
     padding: 20px;
     width: 80%;
     border: 1px solid #DCDCDC;
-    min-height: 50vh;
+    /* min-height: 50vh; */
 }
 
 .customerAddressItem1 {
@@ -41,6 +41,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     box-sizing: border-box;
     padding-left: 15px;
     justify-content: space-between;
@@ -111,13 +112,37 @@
     /* border: 1px solid red; */
 }
 
-.radioButtonContainer {
+/* .radioButtonContainer {
     box-sizing: border-box;
     padding-left: 15px;
 }
 
 .radioButton {
     width: 400px;
+} */
+
+@media screen and (max-width: 600px) {
+    .customerDetailsContainer {
+        width: 100%;
+    }
+    
+    .customerAddressItem1 {
+        flex-wrap: wrap;
+    }
+
+    .customerAddressItem1Text {
+        width: 100%;
+    }
+    
+    .customerFullname, .customerMobileNum, .customerCity, .customerState {
+        width: 100%;
+    }
+
+    .customerFullname {
+        margin-bottom: 15px;
+    }
+
+    .customerContinueBtn {
+        height: 50px;
+    }
 }
-
-

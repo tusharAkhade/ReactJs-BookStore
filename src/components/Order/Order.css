@@ -110,7 +110,15 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 600px) {
+    .orderBookContainer {
+        height: auto;
+        flex-wrap: wrap;
+    }
 
-
+    .orderBookImageContainer {
+        width: 100%;
+    }
+}
 
 

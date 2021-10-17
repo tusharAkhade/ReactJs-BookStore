@@ -207,25 +207,6 @@ function CustomerAddress(props) {
                         </div>
                     </div>
                 </div>
-                <div className="radioButtonContainer">
-                    <div className="radioButton">
-                        <FormControl component="fieldset" style={{width: "100%"}}>
-                            <FormLabel component="legend">Type</FormLabel>
-                            <RadioGroup
-                                row
-                                aria-label="type"
-                                defaultValue="WORK"
-                                name="type"
-                                style={{display: "flex", justifyContent: "space-between"}}
-                                onChange={handleRadioButton}
-                            >
-                                <FormControlLabel value="Home" control={<Radio />} label="Home" />
-                                <FormControlLabel selected value="Work" control={<Radio />} label="Work" />
-                                <FormControlLabel value="Other" control={<Radio />} label="Other" />
-                            </RadioGroup>
-                        </FormControl>
-                    </div>
-                </div>
             </div>
             {
                 showHomeDetails &&
