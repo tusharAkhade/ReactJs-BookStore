@@ -169,11 +169,19 @@
     .navItem1 {
         width: 80%;
     }
+    
+    .navSearchbar {
+        margin-right: 20px;
+    }
 }
 
 @media screen and (min-width: 660px) and (max-width: 760px) {
     .navItem1 {
         width: 80%;
+    }
+
+    .navSearchbar {
+        margin-right: 20px;
     }
 }
 
