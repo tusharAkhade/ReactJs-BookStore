@@ -1,9 +1,8 @@
 import Enzyme, { shallow, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
+Enzyme.configure({ adapter: new Adapter() })
 
 import Navbar from '../components/Navbar/Navbar';
-
-Enzyme.configure({ adapter: new Adapter() })
 
 const shallowMountNavbar = (props = {}, state = null) => {
     const comp = shallow(<Navbar />)
