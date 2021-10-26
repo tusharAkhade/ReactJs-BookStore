@@ -4,19 +4,20 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
-import { addToCart, addWishList, getAddedToCartBooks, removeItemFromCart, updateAddToCart } from '../../service/DataService';
+import { addToCart, addWishList, getWishListBooks, getAddedToCartBooks, removeItemFromCart, updateAddToCart } from '../../service/DataService';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import StarIcon from '@mui/icons-material/Star';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function ViewSingleBookInfo(props) {
     const { singleBook } = props
     const [alreadyAddedBookInCart, setAlreadyAddedBookInCart] = useState([])
     const [openCartCounter, setOpenCartCounter] = useState(false)
+    const [alreadyAddedWishList, setAlreadyAddedWishList] = useState([])
 
     const cartItems = () => {
         getAddedToCartBooks()
             .then(res => {
-                // console.log(res.data.result)
                 let singleBookAddedInCart = res.data.result.filter(function (book) {
                     if (book.product_id._id == singleBook[0]._id) {
                         return book
@@ -27,8 +28,21 @@ function ViewSingleBookInfo(props) {
             .catch(err => console.log(err))
     }
 
+    const wishlistBook = () => {
+        getWishListBooks()
+            .then(res => {
+                let wishListBook = res.data.result.filter(function(book) {
+                    if (book.product_id._id == singleBook[0]._id) {
+                        return book
+                    }
+                })
+                setAlreadyAddedWishList(wishListBook)
+            })
+    }
+
     useEffect(() => {
         cartItems()
+        wishlistBook()
     }, [singleBook])
 
     const handleAddToBagClick = () => {
@@ -74,6 +88,7 @@ function ViewSingleBookInfo(props) {
 
     const handleWishlistClick = () => {
         addWishList(singleBook[0]._id)
+        wishlistBook()
     }
 
     return (
@@ -109,7 +124,11 @@ function ViewSingleBookInfo(props) {
                                                     )
 
                                             }
-                                            <Button className="wishlistBtn" onClick={handleWishlistClick} style={{ backgroundColor: "#333333", borderRadius: "3px", width: "45%", color: "#DBDBDB", }} variant="contained">Wishlist</Button>
+                                            {
+                                                (alreadyAddedWishList.length >= 1) ? 
+                                                <button className="wishListHeartIcon"><FavoriteIcon style={{color: "#A03037", width:"40px", height:"100%", }} /></button> :
+                                                <Button className="wishlistBtn" onClick={handleWishlistClick} style={{ backgroundColor: "#333333", borderRadius: "3px", width: "45%", color: "#DBDBDB", }} variant="contained">Wishlist</Button>
+                                            }
                                         </div>
                                     </div>
                                     <div className="bookInfoShowContainer">

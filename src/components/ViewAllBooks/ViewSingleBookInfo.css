@@ -88,6 +88,12 @@
     align-items: center;
 }
 
+.wishListHeartIcon {
+    width: 45%;
+    border: none;
+    background-color: #FFFFFF;
+}
+
 .bookInfoShowContainer {
     width: 57%;
     height: 100%;
