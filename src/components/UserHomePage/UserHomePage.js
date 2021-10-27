@@ -1,43 +1,61 @@
 import React, { useEffect, useState, createContext } from 'react'
 import { getBooks } from '../../service/DataService'
+import { connect } from 'react-redux'
+import { fetchBooks } from '../../redux-service/actions/bookActions'
 import Navbar from '../Navbar/Navbar'
 import ViewAllBooks from '../ViewAllBooks/ViewAllBooks'
 import ViewSingleBookInfo from '../ViewAllBooks/ViewSingleBookInfo'
 
 export const ActionContext = createContext()
 
-function UserHomePage() {
-    const [booksInfo, setBooksInfo] = useState([])
+function UserHomePage(props) {
     const [openSingleBookInfo, setOpenSingleBookInfo] = useState(false)
     const [singleBook, setSingleBook] = useState([])
+
     useEffect(() => {
-        getBooks()
-        .then(res => {
-            setBooksInfo(res.data.result)
-        })
-        .catch(err => console.log(err))
+        props.fetchBooks()
     }, [])
 
     let listenToViewBookInfo = (openOrNot, bookId) => {
         setOpenSingleBookInfo(openOrNot)
-        let book = booksInfo.filter(book => book._id == bookId)
+        let book = props.books.filter(book => book._id == bookId)
         setSingleBook(book)
     }
 
     return (
         <div>
-            <div className="navbarInUserHome" style={{position:"sticky", zIndex:"2", top:"0"}}>
+            <div className="navbarInUserHome" style={{ position: "sticky", zIndex: "2", top: "0" }}>
                 <Navbar name="homePage" listenToViewBookInfo={listenToViewBookInfo} />
             </div>
             <div className="booksCardInUserHome">
-            <ActionContext.Provider value={listenToViewBookInfo}>
                 {
-                    openSingleBookInfo ? <ViewSingleBookInfo singleBook={singleBook} /> : <ViewAllBooks booksInfo={booksInfo} />
+                    props.bookReducer.loading ?
+                        (<h1>Loading</h1>)
+                        :
+                        (
+                            <ActionContext.Provider value={listenToViewBookInfo}>
+                                {
+                                    openSingleBookInfo ? <ViewSingleBookInfo singleBook={singleBook} /> : <ViewAllBooks />
+                                }
+                            </ActionContext.Provider>
+                        )
                 }
-            </ActionContext.Provider>
             </div>
         </div>
     )
 }
 
-export default UserHomePage
+const mapStateToProps = state => {
+    // console.log(state)
+    return {
+        bookReducer: state.bookReducer
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchBooks: () => dispatch(fetchBooks())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserHomePage)

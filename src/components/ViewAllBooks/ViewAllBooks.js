@@ -1,10 +1,10 @@
 import React from 'react'
 import Footer from '../Footer/Footer'
 import MapBooks from './MapBooks'
+import { connect } from 'react-redux'
 import './ViewAllBooks.css'
 
 function ViewAllBooks(props) {
-    const { booksInfo } = props
     return (
         <React.Fragment>
             <div className="mainContainer allBooksCardMainContainer">
@@ -21,7 +21,7 @@ function ViewAllBooks(props) {
                     </div>
                     <div className="allBooksCard">
                         {
-                            booksInfo.map(book => <MapBooks book={book} />)
+                            props.bookReducer.books.map(book => <MapBooks book={book} />)
                         }
                     </div>
                 </div>
@@ -31,4 +31,11 @@ function ViewAllBooks(props) {
     )
 }
 
-export default ViewAllBooks
+const mapStateToProps = state => {
+    // console.log(state)
+    return {
+        bookReducer: state.bookReducer
+    }
+}
+
+export default connect(mapStateToProps)(ViewAllBooks)
