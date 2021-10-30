@@ -7,17 +7,19 @@ import MyCart from '../MyCart/MyCart'
 import PlaceOrder from '../PlaceOrder/PlaceOrder'
 import UserHomePage from '../UserHomePage/UserHomePage'
 import Wishlist from '../Wishlist/Wishlist'
+import AuthRoute from './AuthRoute'
+import ProtectedRoute from './ProtectedRoute'
 
 function RouterDom() {
     return (
         <Provider store = {store} >
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/' component={Login} ></Route>
-                    <Route path='/user-home-page' component={UserHomePage} ></Route>
-                    <Route path='/user-cart' component={MyCart} ></Route>
-                    <Route path='/user-order-placed' component={PlaceOrder} />
-                    <Route path='/user-wishlist' component={Wishlist} />
+                    <AuthRoute exact path='/' component={Login} />
+                    <ProtectedRoute path='/user-home-page' component={UserHomePage} />
+                    <ProtectedRoute path='/user-cart' component={MyCart} />
+                    <ProtectedRoute path='/user-order-placed' component={PlaceOrder} />
+                    <ProtectedRoute path='/user-wishlist' component={Wishlist} />
                 </Switch>
             </BrowserRouter>
         </Provider>
