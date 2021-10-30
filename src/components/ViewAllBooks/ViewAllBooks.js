@@ -36,7 +36,12 @@ function ViewAllBooks(props) {
                     </div>
                     <div className="allBooksCard">
                         {
-                            books.map(book => <MapBooks key={book._id} book={book} />)
+                            // filter used to search a book by bookName
+                            books.filter((book) => {
+                                if(props.searchBook === '' || book.bookName.toLowerCase().includes(props.searchBook.toLowerCase())) {
+                                    return book
+                                }
+                            }).map(book => <MapBooks key={book._id} book={book} />)
                         }
                     </div>
                 </div>
@@ -50,7 +55,8 @@ function ViewAllBooks(props) {
 const mapStateToProps = state => {
     // console.log(state)
     return {
-        bookReducer: state.bookReducer
+        bookReducer: state.bookReducer,
+        searchBook: state.searchBarReducer.searchBar
     }
 }
 
