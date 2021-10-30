@@ -18,7 +18,7 @@ function UserHomePage(props) {
 
     let listenToViewBookInfo = (openOrNot, bookId) => {
         setOpenSingleBookInfo(openOrNot)
-        let book = props.books.filter(book => book._id == bookId)
+        let book = props.bookReducer.books.filter(book => book._id == bookId)
         setSingleBook(book)
     }
 
