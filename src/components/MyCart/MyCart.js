@@ -90,7 +90,7 @@ function MyCart() {
                         {
                             cart.map(book => {
                                 return (
-                                    <div className="myCartItem2">
+                                    <div key={book._id} className="myCartItem2">
                                         <div className="myCartItem2-1">
                                             <div className="myCartItem2-1Image"></div>
                                             <div className="myCartItem2-2BookInfo">

@@ -65,7 +65,7 @@ function Navbar(props) {
                             <div className="profileImg"> <PersonOutlineOutlinedIcon /> </div>
                             <div className="profileTxt">Tushar</div>
                         </div>
-                        <Popper click style={{ boxShadow: "0px 3px 6px #00000029", boxSizing: "border-box", backgroundColor: "#fff", border: "2px solid white", width: "200px", borderRadius: "3px", height: "182px" }} id={id} open={open} anchorEl={anchorEl}>
+                        <Popper style={{ boxShadow: "0px 3px 6px #00000029", boxSizing: "border-box", backgroundColor: "#fff", border: "2px solid white", width: "200px", borderRadius: "3px", height: "182px" }} id={id} open={open} anchorEl={anchorEl}>
                             <ClickAwayListener onClickAway={() => setAnchorEl(null)}>
                                 <div className="popperContainer">
                                     <div className="popperHeading">Hello Tushar</div>

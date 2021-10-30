@@ -61,7 +61,7 @@ function Wishlist() {
                     <div className="wishlistAllBooksContainer">
                         {
                             wishListBooks.map(book =>
-                                <div className="wishlistSingleBookContainer">
+                                <div key={book._id} className="wishlistSingleBookContainer">
                                     <div className="wishlistImgAndInfoContainer">
                                         <div className="wishlistBookImgContainer">
                                             <div className="wishlistBookImg"></div>

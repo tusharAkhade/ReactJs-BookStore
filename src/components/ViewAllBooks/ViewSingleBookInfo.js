@@ -104,7 +104,7 @@ function ViewSingleBookInfo(props) {
                     {
                         singleBook.map(book => {
                             return (
-                                <div className="innerContainer singleBookInfoContainer">
+                                <div key={book._id} className="innerContainer singleBookInfoContainer">
                                     <div className="bookImageShowContainer">
                                         <div className="singleBookImageContainer">
                                             <div className="singleBookImage"></div>
