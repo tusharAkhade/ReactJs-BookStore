@@ -14,6 +14,7 @@ function ViewSingleBookInfo(props) {
     const [alreadyAddedBookInCart, setAlreadyAddedBookInCart] = useState([])
     const [openCartCounter, setOpenCartCounter] = useState(false)
     const [alreadyAddedWishList, setAlreadyAddedWishList] = useState([])
+    const [addToWishList, setAddToWishList] = useState(false)
 
     const cartItems = () => {
         getAddedToCartBooks()
@@ -88,6 +89,11 @@ function ViewSingleBookInfo(props) {
 
     const handleWishlistClick = () => {
         addWishList(singleBook[0]._id)
+            .then(res => {
+                if(res.status === 200) {
+                    setAddToWishList(true)
+                }
+            })
         wishlistBook()
     }
 
@@ -125,7 +131,7 @@ function ViewSingleBookInfo(props) {
 
                                             }
                                             {
-                                                (alreadyAddedWishList.length >= 1) ? 
+                                                (addToWishList || alreadyAddedWishList.length >= 1) ? 
                                                 <button className="wishListHeartIcon"><FavoriteIcon style={{color: "#A03037", width:"40px", height:"100%", }} /></button> :
                                                 <Button className="wishlistBtn" onClick={handleWishlistClick} style={{ backgroundColor: "#333333", borderRadius: "3px", width: "45%", color: "#DBDBDB", }} variant="contained">Wishlist</Button>
                                             }
