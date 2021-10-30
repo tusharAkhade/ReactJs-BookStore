@@ -8,6 +8,7 @@ import ShopOutlinedIcon from '@mui/icons-material/ShopOutlined';
 import Badge from '@mui/material/Badge';
 import Popper from '@mui/material/Popper';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import { connect } from 'react-redux';
 
 function Navbar(props) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -38,6 +39,11 @@ function Navbar(props) {
         setAnchorEl(anchorEl ? null : event.currentTarget);
     }
 
+    const handleSearch = (event) => {
+        console.log(event.currentTarget.value)
+        props.dispatch({ type: "SEARCH_WORD", payload: event.currentTarget.value})
+    }
+
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popper' : undefined;
 
@@ -51,7 +57,7 @@ function Navbar(props) {
                             <div className="logoText">Bookstore</div>
                         </div>
                         <div className="navSearchbar">
-                            <input className="searchBarInput" placeholder=" Search ..." type="text" />
+                            <input className="searchBarInput" onChange={handleSearch} placeholder=" Search ..." type="text" />
                         </div>
                     </div>
                     <div className="navItem2">
@@ -87,4 +93,11 @@ function Navbar(props) {
     )
 }
 
-export default Navbar
+const mapStateToProps = state => {
+    // console.log(state)
+    return {
+        searchBook: state.searchBarReducer.searchBar
+    }
+}
+
+export default connect(mapStateToProps)(Navbar)
